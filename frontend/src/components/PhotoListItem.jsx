@@ -4,12 +4,11 @@ import "../styles/PhotoListItem.scss";
 import FavIcon from "./FavIcon";
 import PhotoFavButton from "./PhotoFavButton";
 
-
-
-
-
 const PhotoListItem = (props) => {
   const { imageSource, username, profile, location } = props.photoData;
+
+  let city = location ? location.city : '';
+  let country = location ? location.country : '';
 
   return (
     <div className="photo-list__item">
@@ -23,7 +22,7 @@ const PhotoListItem = (props) => {
               {username}
             </span>
             <span className="photo-list__user-location">
-              {location.city} {location.country}
+              {city} {country}
             </span>
           </div>
         </div>
@@ -31,6 +30,5 @@ const PhotoListItem = (props) => {
     </div>
   );
 };
-
 
 export default PhotoListItem;
