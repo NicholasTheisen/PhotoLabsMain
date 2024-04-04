@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import './App.scss';
 import HomeRoute from './routes/HomeRoute';
-import PhotoDetailsModal from 'routes/PhotoDetailsModal';
+import PhotoDetailsModal from './routes/PhotoDetailsModal';
 import photos from "../src/mocks/photos";
 import topics from "../src/mocks/topics.js";
 
@@ -11,6 +11,7 @@ const App = () => {
 
   const [photoIDs, setPhotoIDs] = useState([]);
   let isFavPhotoExist = false;
+  const [showModel, setShowModel] = useState(false);
 
   const updateFavouritedPhotoIDs = (id, action) => {
     if (!action) {
@@ -35,8 +36,9 @@ const App = () => {
         photos={photos}
         updateFavouritedPhotoIDs={updateFavouritedPhotoIDs}
         isFavPhotoExist={isFavPhotoExist}
+        setShowModel={setShowModel}
       />
-      <PhotoDetailsModal />
+      {showModel && < PhotoDetailsModal setShowModel={setShowModel} />}
     </div >
   );
 };
