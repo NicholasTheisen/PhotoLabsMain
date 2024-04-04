@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
+
 import FavIcon from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 
 const PhotoFavButton = (props) => {
-  const { fav, favPhoto } = props;
 
-  const handleClick = () => {
-    favPhoto();
-  };
+  const { clickOnIcon, selected } = props;
 
   return (
-    <div className="photo-list__fav-icon" onClick={handleClick}>
+    <div className="photo-list__fav-icon">
       <div className="photo-list__fav-icon-svg">
-        <FavIcon selected={fav} />
+        <FavIcon
+          clickOnIcon={clickOnIcon}
+          selected={selected}
+        />
       </div>
     </div>
   );
