@@ -2,6 +2,7 @@ import React from "react";
 
 import "../styles/PhotoList.scss";
 import PhotoListItem from "./PhotoListItem";
+import photos from "../mocks/photos";
 
 const sampleDataForPhotoList = [
   {
@@ -59,6 +60,7 @@ const sampleDataForPhotoList = [
 
 const PhotoList = (props) => {
   const { fav, favPhoto } = props;
+  const { photos } = props;
 
   const list = sampleDataForPhotoList.map((photo, i) => (
     <PhotoListItem
@@ -67,6 +69,7 @@ const PhotoList = (props) => {
       fav={fav}
       favPhoto={favPhoto}
     />
+
   ));
 
   return <div className="photo-list">{list}</div>;
