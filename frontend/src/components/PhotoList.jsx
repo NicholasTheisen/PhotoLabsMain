@@ -1,8 +1,7 @@
 import React from "react";
 
+import PhotoListItem from './PhotoListItem';
 import "../styles/PhotoList.scss";
-import PhotoListItem from "./PhotoListItem";
-import photos from "../mocks/photos";
 
 const sampleDataForPhotoList = [
   {
@@ -59,21 +58,22 @@ const sampleDataForPhotoList = [
 ];
 
 const PhotoList = (props) => {
-  const { fav, favPhoto } = props;
+
   const { photos } = props;
 
-  const list = sampleDataForPhotoList.map((photo, i) => (
-    <PhotoListItem
-      key={i}
-      photoData={photo}
-      fav={fav}
-      favPhoto={favPhoto}
-    />
+  const photoListItemArray = photos.map((item) =>
+    <li key={item.id}><PhotoListItem item={item} /></li>
+  );
 
-  ));
+  // const photoListItemArray = sampleDataForPhotoList.map((item) =>
+  //   <li key={item.id}><PhotoListItem item={item} /></li>
+  // );
 
-  return <div className="photo-list">{list}</div>;
+  return (
+    <ul className="photo-list">
+      {photoListItemArray}
+    </ul>
+  );
 };
-
 
 export default PhotoList;

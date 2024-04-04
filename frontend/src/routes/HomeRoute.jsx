@@ -1,31 +1,19 @@
-import React from "react";
+import React from 'react';
+
 import '../styles/HomeRoute.scss';
-import TopNavigationBar from "components/TopNavigationBar";
-import PhotoList from "components/PhotoList";
-import { useState } from "react";
+import PhotoList from '../components/PhotoList';
+import TopNavigationBar from '../components/TopNavigationBar';
 
-const HomeRoute = () => {
-  const HomeRoute = (props) => {
-
-    const [fav, setFav] = useState(false);
-
-    const favPhoto = () => {
-      if (fav) {
-        setFav(false);
-      } else {
-        setFav(true);
-      }
-    };
-
-
-    return (
-      <div className="home-route">
-        <TopNavigationBar fav={fav} />
-        <PhotoList fav={fav} favPhoto={favPhoto} />
-        <TopNavigationBar fav={fav} topics={props.topics} />
-        <PhotoList fav={fav} favPhoto={favPhoto} photos={props.photos}/>
+const HomeRoute = (props) => {
+  const { topics, photos } = props;
+  return (
+    <div className="home-route">
+      <TopNavigationBar topics={topics} />
+      <div className="photo-list">
+        <PhotoList photos={photos} />
       </div>
-    );
-  };
+    </div>
+  );
 };
+
 export default HomeRoute;

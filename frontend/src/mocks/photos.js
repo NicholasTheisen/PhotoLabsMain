@@ -89,7 +89,7 @@ const photo5 = {
   }
 };
 
-const photo6 =  {
+const photo6 = {
   "id": "6",
   "location": {
     "city": "Montreal",
@@ -178,8 +178,6 @@ const photo10 = {
     "profile": `${process.env.PUBLIC_URL}/profile-1.jpg`
   }
 };
-
-
 
 
 const photos = [
