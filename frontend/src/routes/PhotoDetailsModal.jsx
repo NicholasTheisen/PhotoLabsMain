@@ -1,4 +1,5 @@
 import React from 'react';
+import React from 'react';
 
 import '../styles/PhotoDetailsModal.scss';
 import closeSymbol from '../assets/closeSymbol.svg';
@@ -11,7 +12,6 @@ const PhotoDetailsModal = (props) => {
 
   const item = modalPhotoData;
 
-  console.log(modalPhotoData);
   return (
     <div className="photo-details-modal">
       <button className="photo-details-modal__close-button">
@@ -38,7 +38,7 @@ const PhotoDetailsModal = (props) => {
         {/* check styling name */}
         <div className="photo-details-modal__images">
           <PhotoList
-            photos={Object.values(item.similarPhotos)}
+            photos={Object.values(item.similar_photos)}
             updateFavouritedPhotoIDs={updateFavouritedPhotoIDs}
           />
         </div>

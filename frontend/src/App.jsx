@@ -3,8 +3,6 @@ import React, { useEffect } from 'react';
 import './App.scss';
 import HomeRoute from './routes/HomeRoute';
 import PhotoDetailsModal from './routes/PhotoDetailsModal';
-import photos from "../src/mocks/photos";
-import topics from "../src/mocks/topics.js";
 import useApplicationData from 'hooks/useApplicationData';
 
 
@@ -15,6 +13,7 @@ const App = () => {
     photoIDs,
     showModal,
     modalPhotoData,
+    fetchData,
     updateFavouritedPhotoIDs,
     updateModalData
   } = useApplicationData();
@@ -23,20 +22,25 @@ const App = () => {
 
   { isFavPhotoExist = photoIDs.length ? !isFavPhotoExist : isFavPhotoExist; }
 
-  useEffect(() => {
-  }, [modalPhotoData]);
+  // useEffect(() => {
+  //   console.log(photoIDs);
+  // }, [photoIDs]);
+
+  // useEffect(() => {
+  //   console.log(state);
+  // }, [state]);
 
   return (
     <div className="App">
       <HomeRoute
-        topics={topics}
-        photos={photos}
+        topics={fetchData.topicData}
+        photos={fetchData.photoData}
         updateFavouritedPhotoIDs={updateFavouritedPhotoIDs}
         isFavPhotoExist={isFavPhotoExist}
         updateModalData={updateModalData}
       />
       {
-        showModal &&
+        showModal && modalPhotoData &&
         < PhotoDetailsModal
           modalPhotoData={modalPhotoData}
           updateFavouritedPhotoIDs={updateFavouritedPhotoIDs}
