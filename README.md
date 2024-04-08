@@ -1,7 +1,9 @@
-# react-photolabs
-The PhotoLabs project for the Web Development React course programming.
-
 # Photolabs
+
+A web app designed to allow users to view and like photos from a variety of users.
+
+!["Homepage"](https://i.imgur.com/ucB9LgI.jpeg)
+!["ViewPhoto"](https://i.imgur.com/ioQ9fiH.jpeg)
 
 ## Setup
 
