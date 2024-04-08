@@ -1,24 +1,12 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React from 'react';
 
 import FavIcon from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 
-const PhotoFavButton = (props) => {
-
-  // const { clickOnIcon, selected } = props;
-
-  const { item, updateFavouritedPhotoIDs } = props;
-
-  const [selected, setSelected] = useState(false);
+const PhotoFavButton = ({ updateFavouritedPhotoIDs, item, photoIDs }) => {
 
   const clickOnIcon = () => {
-    if (selected) {
-      setSelected(false);
-      updateFavouritedPhotoIDs(item.id, selected);
-    } else {
-      setSelected(true);
-      updateFavouritedPhotoIDs(item.id, selected);
-    }
+    updateFavouritedPhotoIDs(item.id);
   };
 
   return (
@@ -26,7 +14,7 @@ const PhotoFavButton = (props) => {
       <div className="photo-list__fav-icon-svg">
         <FavIcon
           clickOnIcon={clickOnIcon}
-          selected={selected}
+          selected={photoIDs.indexOf(item.id) > -1}
         />
       </div>
     </div>

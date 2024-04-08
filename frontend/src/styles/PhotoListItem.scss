@@ -8,12 +8,12 @@
   max-width: fit-content;
 }
 
-/* .photo-list__image {
+.photo-list__image {
   user-select: none;
   width: 300px;
   height: 200px;
   object-fit: cover;
-} */
+}
 
 .photo-list__image {
   border-radius: 8px 8px 0px 0px;
@@ -21,6 +21,10 @@
   width: 300px;
   height: 200px;
   object-fit: cover;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .photo-list__user-profile {
@@ -28,25 +32,19 @@
   border-radius: 100%;
   vertical-align: middle;
   margin-right: 8px;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
 }
 
 .photo-list__user-details {
   display: flex;
-  flex-direction: column;
-}
-
-.photo-list__user-details2 {
-  display: flex;
-  flex-direction: row;
 }
 
 .photo-list__user-info {
   margin-top: 5px;
   font-weight: 700;
   font-size: 12px;
-  // margin-left: 8px;
+  margin-left: 8px;
 }
 
 .photo-list__user-location {

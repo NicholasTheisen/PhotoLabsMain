@@ -4,8 +4,7 @@ import '../styles/TopNavigationBar.scss';
 import TopicList from './TopicList';
 import FavBadge from './FavBadge';
 
-const TopNavigation = (props) => {
-  const { topics, isFavPhotoExist, updatePhotosByTopics } = props;
+const TopNavigation = ({ topics, isFavPhotoExist, updatePhotosByTopics }) => {
 
   return (
     <div className="top-nav-bar">

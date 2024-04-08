@@ -3,15 +3,14 @@ import React from "react";
 import "../styles/PhotoListItem.scss";
 import PhotoFavButton from './PhotoFavButton';
 
-const PhotoListItem = (props) => {
-
-  const { item, updateFavouritedPhotoIDs, updateModalData } = props;
+const PhotoListItem = ({ item, updateFavouritedPhotoIDs, updateModalData, photoIDs }) => {
 
   return (
     <div className="photo-list__item">
       <PhotoFavButton
         updateFavouritedPhotoIDs={updateFavouritedPhotoIDs}
         item={item}
+        photoIDs={photoIDs}
       />
       <img className="photo-list__image" onClick={() => updateModalData(true, item)} src={item.urls.regular} alt="image" />
       <div className="photo-list__user-details">
